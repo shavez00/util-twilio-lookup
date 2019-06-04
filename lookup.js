@@ -67,13 +67,11 @@ function getResults(e164Array) {
 function getPhoneNumType(e164) {
         if (checkAreaCode(e164) != false) {
                 console.log("Retrieving number type for " + e164);
-                const accountSid = process.env.TWILIO_ACCOUNT_SID;
-                const authToken = process.env.TWILIO_AUTH_TOKEN;
+		const accountSid = '';
+		const authToken = '';
                 const client = require('twilio')(accountSid, authToken);
 
                 return new Promise(function(resolve, reject) {
-                        const client = require('twilio')(accountSid, authToken);
-
                         client.lookups.phoneNumbers(e164)
                                 .fetch({type: 'carrier'})
                                 .then(function(phone_number) {
