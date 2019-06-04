@@ -72,8 +72,6 @@ function getPhoneNumType(e164) {
                 const client = require('twilio')(accountSid, authToken);
 
                 return new Promise(function(resolve, reject) {
-                        const accountSid = 'ACbeb4bc6101293596d6e9073eabc067ae';
-                        const authToken = '0ea2833f863ae15f1d19bdf9a57b2659';
                         const client = require('twilio')(accountSid, authToken);
 
                         client.lookups.phoneNumbers(e164)
