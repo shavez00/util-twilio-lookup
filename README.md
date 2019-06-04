@@ -18,15 +18,17 @@ Step 11.  Enjoy!
 
 *** NOTE: The column argument is the column where you've storage the phone numbers you want to lookup the carrier information for.
 
-## Using the neighborhood map
+## Using the utility
 
-The neighborhood map displays restaurants in downtown Portland that serve Mexican food.  Click on any pin drop to see additional information on that location.
+This utility is run from the command line using node.  Your source file which will contain your list of phone numbers that you would like to get carrier information for should be saved in the same directory as the "lookup.js" file.  You can also use the absolute or relative path to reach this file as well.
 
-Select any location in the list box on the right to see where on the map that location is.
+The node script takes 3 arguments in order to execute.  The first argument is the source file.  The second argument is the destination file.  The third argument is the column number of where the phone numbers are located.
 
-In the InfoWindow will be a link to FourSquare to get additional information.
+This script will not transform phone numbers from the normal phone format (xxx) xxx-xxxx to the E.164 format (+1xxxxxxxxxx).  You must make sure that the phone numbers are in E.164 format or the script will fail.
 
-Service worker caching is available for off-line access.  For instructions on how to enable service worker caching, please see the notes in the "./src/registerServiceWorker.js" file.
+You also need to save you Account SID and AUTH Token as enviornment varilables named $TWILIO_ACCOUNT_SID and $TWILIO_AUTH_TOKEN or the script will fail.
+
+The format for running the script is 'node lookup.js -sourceFile -destFile -column'.
 
 ### Prerequisites
 
