@@ -18,23 +18,24 @@ if(typeof column == "undefined") {
         process.exit(1);
 }
 
+createArrayOfNum(sourceFile)
+        .then(function(csv) {
+                createE164NumArray(csv)
+                        .then(function(e164Array) {
+                                getResults(e164Array);
+                        });
+        });
+
 var interval = 12; 
 
 function readList(listFile) {
-  return fs.readFileSync(listFile, 'utf8').split("\r\n");
+	var fileArray = fs.readFileSync(listFile, 'utf8').split("\n");
+	for (var i =0;i<fileArray.length;i++) {
+		var newNum = fileArray[i].replace("\r","");
+		fileArray.splice(i,1,newNum);
+	}
+	return fileArray;
 };
-
-function createE164NumArray(csv) {
-        var e164Array = [];
-        return new Promise(function(resolve, reject) {
-                csv.forEach(function(element) {
-                        var e164 = element.split(',');
-                        e164Array.push(e164[column-1]);
-                });
-                resolve(e164Array);
-                reject("Error creating array of e164 formatted phone numbers");
-        });
-}
 
 function createArrayOfNum(sourceFile) {
         try {
@@ -52,6 +53,18 @@ function createArrayOfNum(sourceFile) {
                 process.exit(1);
         };
 };
+
+function createE164NumArray(csv) {
+        var e164Array = [];
+        return new Promise(function(resolve, reject) {
+                csv.forEach(function(element) {
+                        var e164 = element.split(',');
+                        e164Array.push(e164[column-1]);
+                });
+                resolve(e164Array);
+                reject("Error creating array of e164 formatted phone numbers");
+        });
+}
 
 function getResults(e164Array) {
         for (var i = 0; i <= e164Array.length-1; i++) {
@@ -100,7 +113,7 @@ function checkAreaCode(e164) {
 		var canadianAreaCodeArray = readList("./canadianAreaCodes.csv");
         	if (canadianAreaCodeArray.includes(num)) result = "CA";
 	} 
-	return (result);
+	return result;
 };
 
 function saveResults(result) {
@@ -109,12 +122,3 @@ function saveResults(result) {
                 if (err) console.log(err);
         });
 }
-
-
-createArrayOfNum(sourceFile)
-	.then(function(csv) {
-		createE164NumArray(csv)
-			.then(function(e164Array) {
-				getResults(e164Array);
-			});
-	});
