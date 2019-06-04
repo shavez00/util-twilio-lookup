@@ -81,8 +81,11 @@ function getPhoneNumType(e164) {
                 })
         } else {
                 return new Promise(function(resolve, reject) {
-                        console.log(e164 + " does not contain a valid North American number");
-                        resolve ([e164, "Not a US number"]);
+			if(typeof e164 == "undefined") {
+				console.log ("One of the numbers in your csv is not a valid e164 phone number")
+			} else {
+                        	resolve ([e164, "Not a US number"]);
+			}
                 })
         }
 }
