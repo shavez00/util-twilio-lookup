@@ -6,15 +6,16 @@ This utility provides a way to retrieve additional information about a phone num
 
 Step 1.  Git clone the repository</br>
 Step 2.  If you don't have NPM installed, [install npm](https://www.npmjs.com/get-npm).</br>
-Step 3.  Verify your npm installation by running the command "npm -V" from your command line.  You should get a response with your version of NPM, if not, doublecheck step 2.</br>
-Step 4.  Follow the instructions to install the [Twilio Node.js](https://www.twilio.com/docs/libraries/node) helper library.</br>
-Step 5.  Navigate to the root directory of where you cloned the repository.</br>
-Step 6.  If you don't have a Twilio account, [sign up for one](https://www.twilio.com/try-twilio).</br>
-Step 7.  Navigate to your Twilio console and locate your [Account SID](https://support.twilio.com/hc/en-us/articles/223136607-What-is-an-Application-SID-) and Auth Token.</br>
-Step 8.  [Securely store your account credentials in your environment varibles.](https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html) as "TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN"</br>
-Step 9.  Store your source file CSV in the same location that you cloned the Git repository.  Decide what you want to name the file where your results will be saved.</br>
-Step 10.  On the command line, run the utility using the format of 'node lookup.js sourceFile destFile column'. The first column in your csv will be column number 1.</br>
-Step 11.  Enjoy!
+Step 3.  If you don't have Node.js installed, [install node.js](https://nodejs.org/en/download/).</br>
+Step 4.  Verify your npm installation by running the command "npm -V" from your command line.  You should get a response with your version of NPM, if not, doublecheck step 2.</br>
+Step 5.  Follow the instructions to install the [Twilio Node.js](https://www.twilio.com/docs/libraries/node) helper library.</br>
+Step 6.  Navigate to the root directory of where you cloned the repository.</br>
+Step 7.  If you don't have a Twilio account, [sign up for one](https://www.twilio.com/try-twilio).</br>
+Step 8.  Navigate to your Twilio console and locate your [Account SID](https://support.twilio.com/hc/en-us/articles/223136607-What-is-an-Application-SID-) and Auth Token.</br>
+Step 9.  [Securely store your account credentials in your environment varibles.](https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html) as "TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN"</br>
+Step 10.  Store your source file CSV in the same location that you cloned the Git repository.  Decide what you want to name the file where your results will be saved.</br>
+Step 11.  On the command line, run the utility using the format of 'node lookup.js sourceFile destFile column'. The first column in your csv will be column number 1.</br>
+Step 12.  Enjoy!
 
 *** NOTE: The column argument is the column where you've stored the phone numbers you want to lookup the carrier information for.
 
