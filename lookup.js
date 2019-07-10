@@ -77,6 +77,7 @@ function getResults(e164Array) {
 	}
 }
 
+
 function getPhoneNumType(e164) {
         if (checkAreaCode(e164) != false) {
                 console.log("Retrieving number type for " + e164);
@@ -86,7 +87,14 @@ function getPhoneNumType(e164) {
 
                 return new Promise(function(resolve, reject) {
                         client.lookups.phoneNumbers(e164)
-                                .fetch({type: 'carrier'})
+                                .fetch({type: 'carrier'}, function(num){
+                                    if (num != null) {
+                                        var error_code = "Error code " + num.code + " " + e164 + " is not a valid phone number";
+                                        var result = [e164, error_code];
+                                        console.log(e164 + " is not a valid number");
+                                        resolve(result);
+                                    }
+                                 })
                                 .then(function(phone_number) {
                                         var result = [e164, phone_number.carrier.type];
                                         resolve(result);
@@ -103,8 +111,12 @@ function getPhoneNumType(e164) {
         }
 }
 
+
+//changing the result varible for 'false' will allow the script to check area 
+//codes and validate if it's a US or CA number
 function checkAreaCode(e164) {
-	var result = false;
+/*
+	var result = true;
 	if (typeof e164 != "string") return false;
 	var areaCodeArray = readList("./areaCodes.csv");
 	var num = e164.slice(0, -7).replace("+1","");
@@ -114,7 +126,7 @@ function checkAreaCode(e164) {
         	if (canadianAreaCodeArray.includes(num)) result = "CA";
 	} 
 	return result;
-};
+*/};
 
 function saveResults(result) {
 	console.log("Writing phone number type for " + result[0]);
