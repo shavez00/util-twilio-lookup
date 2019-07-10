@@ -33,7 +33,7 @@ The format for running the script is 'node lookup.js sourceFile destFile column'
 
 If a number is not a valid phone number you will see an error code and error message in your destination file in the same row as the invalid number as well as see a console output with an error message.
 
-There's also a throttling mechanism so that the script doesn't send more requests than is allowed by Twilio.  If you find that your list isn't completing try increase this interval to slow down how many requests per second your machine is sending to Twilio.  It is a varible in the script called "interval" and it defaults to 12.
+There's also a throttling mechanism so that the script doesn't send more requests than is allowed by Twilio.  If you find that your list isn't completing, try increasing this interval to slow down how many requests per second your machine is sending to Twilio.  It is a varible in the script called "interval" and it defaults to 12.
 
 ### Prerequisites
 
