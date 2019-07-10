@@ -32,15 +32,15 @@ The format for running the script is 'node lookup.js -sourceFile -destFile -colu
 
 ### Prerequisites
 
-[NPM](https://www.npmjs.com/)
-[Twilio Account](https://www.twilio.com/login)
-[Twilio Node.js helper library](https://www.twilio.com/docs/libraries)
+[NPM](https://www.npmjs.com/)</br>
+[Twilio Account](https://www.twilio.com/login)</br>
+[Twilio Node.js helper library](https://www.twilio.com/docs/libraries)</br>
 
 ### Resources used
 
-"MDN Web Docs" [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
-"Node.js Documentation" [nodejs.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
-"Delay each loop iteration in node js" [stackoverflow](https://stackoverflow.com/questions/30514584/delay-each-loop-iteration-in-node-js-async) - Trott
+"MDN Web Docs" [mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)</br>
+"Node.js Documentation" [nodejs.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)</br>
+"Delay each loop iteration in node js" [stackoverflow](https://stackoverflow.com/questions/30514584/delay-each-loop-iteration-in-node-js-async) - Trott</br>
 
 ## Authors
 
